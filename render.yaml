@@ -3,11 +3,12 @@
 services:
   - type: web
     name: my-web-app
-    runtime:
-      name: node
-      version: 14
+    runtime: node
+    plan : free
+    region : frankfurt
     repo : https://github.com/Farinesse/renderblueprintapp.git
-    buildCommand: npm install && npm run build
+    branch : main
+    buildCommand: npm install
     startCommand: npm start
     env:
       - key: DATABASE_URL
@@ -15,4 +16,7 @@ services:
 
 databases:
   - name: my-postgres-db
-    plan: postgres:small
+    region : frankfurt
+    plan: free
+    databaseName : cloud
+    user : cloud
