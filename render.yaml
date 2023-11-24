@@ -1,9 +1,7 @@
 # render.yaml
 
 services:
-  - name: web
-    env:
-      - key: NODE_ENV
-        value: production
+  - type: web
+    name: my-web-app
     buildCommand: npm install && npm run build
     startCommand: npm start
