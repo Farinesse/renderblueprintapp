@@ -3,5 +3,16 @@
 services:
   - type: web
     name: my-web-app
+    runtime:
+      name: node
+      version: 14
+    repo : https://github.com/Farinesse/renderblueprintapp.git
     buildCommand: npm install && npm run build
     startCommand: npm start
+    env:
+      - key: DATABASE_URL
+        value: postgres://cloudplateform_user:ztHW5d8qKayfS1aIczs6FvcQ3jXBAihk@dpg-clfl8b03nsgc738v9ti0-a/cloudplateform
+
+databases:
+  - name: my-postgres-db
+    plan: postgres:small
