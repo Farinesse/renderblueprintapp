@@ -12,8 +12,9 @@ services:
     startCommand: npm start
     env:
       - key: DATABASE_URL
-        value: postgres://cloudplateform_user:ztHW5d8qKayfS1aIczs6FvcQ3jXBAihk@dpg-clfl8b03nsgc738v9ti0-a/cloudplateform
-
+        fromDatabase:
+          name: my-postgres-db
+          property: connectionString
 databases:
   - name: my-postgres-db
     region : frankfurt
